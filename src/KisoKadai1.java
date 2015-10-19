@@ -15,6 +15,7 @@ public class KisoKadai1 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		System.out.println("1~100から数字を2つ選んで九九表を書かせます。");
 		int x = 0;
 		int y = 0;
 		// 入力　（入力できる数を制限し、有効な数が入力されるまで何度も入力させる）
@@ -40,8 +41,9 @@ public class KisoKadai1 {
 		}
 		System.out.println("以下に九九表を生成します。");
 		System.out.println();
-		// 表の生成（X軸、Y軸を意識して表示させる）
+		// Y軸の値を決める
 		for (int i = y; i > 0; i--) {
+			//x軸の値を決める
 			for (int j = 1; j <= x; j++) {
 				if (i * j < 10) {
 					//桁ごとに適切なスペースを入れる
