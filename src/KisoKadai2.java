@@ -26,20 +26,27 @@ public class KisoKadai2 {
 			while (true) {
 				// 1~100の数字を入力させる
 				System.out.print("いくつだと思う？　⇒　 ");
+				System.out.println();
 				InputStreamReader isr = new InputStreamReader(System.in);
 				BufferedReader br = new BufferedReader(isr);
 				try {
 					String buf = br.readLine();
 					x = Integer.parseInt(buf);
 					// 入力値に対するHigh&Lowを教える
-					if (ran > x & x<=1 & x>=100) {
-						System.out.println("もっと大きいよー");
-					} else if (ran < x & x<=1 & x>=100) {
-						System.out.println("もっと小さいなー");
-					} else if (x < 1 | x > 100) {
+				
+					if (x < 1 | x > 100) {
 						System.out.println("1~100で入力しなさい！");
-					} else {
+						System.out.println();
+						continue;
+				}else if (ran > x){ 
+						System.out.println("もっと大きいよー");
+						System.out.println();
+					} else if (ran < x) {
+						System.out.println("もっと小さいなー");
+						System.out.println();
+					}   else {
 						System.out.println("あたり！　でも賞品はない^q^!");
+						System.out.println();
 						break;
 					}
 				} catch (Exception e) {
