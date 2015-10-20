@@ -10,34 +10,34 @@ import java.io.InputStreamReader;
  */
 
 public class KisoKadai2 {
-//”“–‚ÄƒQ[ƒ€
+//æ•°å½“ã¦ã‚²ãƒ¼ãƒ 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// 1~100‚Ì—”‚ğ“¾‚é
+		// 1~100ã®ä¹±æ•°ã‚’å¾—ã‚‹
 		int ran = 0;
 		int x = 0;
 		while ((ran|x) < 1 | (ran|x) > 100) {
 			ran = (int) (Math.random() * 100);
-			System.out.println("”“–‚ÄƒQ[ƒ€‚µ‚æ[OƒÖOI");
-			System.out.println("ƒ‹[ƒ‹F1~100‚Ü‚Å");
+			System.out.println("æ•°å½“ã¦ã‚²ãƒ¼ãƒ ã—ã‚ˆãƒ¼ï¼¾Ï‰ï¼¾ï¼");
+			System.out.println("ãƒ«ãƒ¼ãƒ«ï¼š1~100ã¾ã§");
 			System.out.println();
 			while (true) {
-				// 1~100‚Ì”š‚ğ“ü—Í‚³‚¹‚é
-				System.out.print("‚¢‚­‚Â‚¾‚Æv‚¤H@Ë@ ");
+				// 1~100ã®æ•°å­—ã‚’å…¥åŠ›ã•ã›ã‚‹
+				System.out.print("ã„ãã¤ã ã¨æ€ã†ï¼Ÿã€€â‡’ã€€ ");
 				InputStreamReader isr = new InputStreamReader(System.in);
 				BufferedReader br = new BufferedReader(isr);
 				try {
 					String buf = br.readLine();
 					x = Integer.parseInt(buf);
-					//“ü—Í’l‚É‘Î‚·‚éHigh&Low‚ğ‹³‚¦‚é
+					//å…¥åŠ›å€¤ã«å¯¾ã™ã‚‹High&Lowã‚’æ•™ãˆã‚‹
 					if (ran > x) {
-						System.out.println("‚à‚Á‚Æ‘å‚«‚¢‚æ[");
+						System.out.println("ã‚‚ã£ã¨å¤§ãã„ã‚ˆãƒ¼");
 					} else if (ran < x) {
-						System.out.println("‚à‚Á‚Æ¬‚³‚¢‚È[");
+						System.out.println("ã‚‚ã£ã¨å°ã•ã„ãªãƒ¼");
 					} else {
-						System.out.println("‚ ‚½‚èI@‚Å‚àÜ•i‚Í‚È‚¢^q^!");
+						System.out.println("ã‚ãŸã‚Šï¼ã€€ã§ã‚‚è³å“ã¯ãªã„^q^!");
 						break;
 					}
 				} catch (Exception e) {
