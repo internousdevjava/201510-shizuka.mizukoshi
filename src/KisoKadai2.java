@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  */
 
 public class KisoKadai2 {
-//数当てゲーム
+	// 数当てゲーム
 	/**
 	 * @param args
 	 */
@@ -18,7 +18,7 @@ public class KisoKadai2 {
 		// 1~100の乱数を得る
 		int ran = 0;
 		int x = 0;
-		while ((ran|x) < 1 | (ran|x) > 100) {
+		while ((ran | x) < 1 | (ran | x) > 100) {
 			ran = (int) (Math.random() * 100);
 			System.out.println("数当てゲームしよー＾ω＾！");
 			System.out.println("ルール：1~100まで");
@@ -31,11 +31,13 @@ public class KisoKadai2 {
 				try {
 					String buf = br.readLine();
 					x = Integer.parseInt(buf);
-					//入力値に対するHigh&Lowを教える
-					if (ran > x) {
+					// 入力値に対するHigh&Lowを教える
+					if (ran > x & x<=1 & x>=100) {
 						System.out.println("もっと大きいよー");
-					} else if (ran < x) {
+					} else if (ran < x & x<=1 & x>=100) {
 						System.out.println("もっと小さいなー");
+					} else if (x < 1 | x > 100) {
+						System.out.println("1~100で入力しなさい！");
 					} else {
 						System.out.println("あたり！　でも賞品はない^q^!");
 						break;
@@ -46,7 +48,6 @@ public class KisoKadai2 {
 					System.out.println("半角で数字を入力して！ ");
 					System.out.println();
 				}
-				
 			}
 		}
 	}
