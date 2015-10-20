@@ -42,6 +42,9 @@ public class KisoKadai2 {
 					}
 				} catch (Exception e) {
 					x = 0;
+					System.out.println();
+					System.out.println("半角で数字を入力して！ ");
+					System.out.println();
 				}
 				
 			}
