@@ -16,6 +16,7 @@ public class KisoKadai3 {
 		// ＜できることを提示＞
 		int x = 0;
 		while (x > 0 | x < 5) {
+			System.out.println();
 			System.out.println("メニュー");
 			System.out.println("1.新規フォルダ作成　2.新規テキストファイル作成　3.ファイルの読み込み　4.ファイルの書き込み　9.終了");
 			System.out.println();
@@ -127,7 +128,8 @@ public class KisoKadai3 {
 					int ch;
 					while ((ch = filereader.read()) != -1) {
 						System.out.print((char) ch);
-					}
+						}
+					filereader.close();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
