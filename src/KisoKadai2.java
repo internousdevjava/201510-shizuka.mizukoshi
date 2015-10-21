@@ -27,9 +27,8 @@ public class KisoKadai2 {
 				// 1~100の数字を入力させる
 				System.out.print("いくつだと思う？　⇒　 ");
 				System.out.println();
-				InputStreamReader isr = new InputStreamReader(System.in);
-				BufferedReader br = new BufferedReader(isr);
 				try {
+					BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 					String buf = br.readLine();
 					x = Integer.parseInt(buf);
 					// 入力値に対するHigh&Lowを教える

@@ -13,19 +13,15 @@ public class KisoKadai3 {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		// ＜できることを提示＞
 		int x = 0;
 		while (x > 0 | x < 5) {
-			System.out.println();
-			System.out.println("メニュー");
-			System.out.println("1.新規フォルダ作成　2.新規テキストファイル作成　3.ファイルの読み込み　4.ファイルの書き込み　9.終了");
-			System.out.println();
+			System.out.println("\nメニュー\n1.新規フォルダ作成　2.新規テキストファイル作成　3.ファイルの読み込み　4.ファイルの書き込み　9.終了\n");
 
 			try {
 				// ＜メニューの選択をさせる＞
 				System.out.print("実行したい数字を半角で入力して下さい。　⇒　");
-				InputStreamReader isr = new InputStreamReader(System.in);
-				BufferedReader br = new BufferedReader(isr);
 				String menu = br.readLine();
 				x = Integer.parseInt(menu);
 			} catch (Exception e) {
@@ -38,20 +34,16 @@ public class KisoKadai3 {
 				String foname = null;
 				//フォルダを作成する場所を指定させる
 				System.out.println("フォルダを作成したい場所を教えて下さい");
-				InputStreamReader isr1 = new InputStreamReader(System.in);
-				BufferedReader br1 = new BufferedReader(isr1);
 				try {
-					fold = br1.readLine();
+					fold = br.readLine();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
 				}
 				//フォルダ名を入力させる
 				System.out.println("フォルダ名を入力してください");
-				isr1 = new InputStreamReader(System.in);
-				br1 = new BufferedReader(isr1);
 				try {
-					foname = br1.readLine();
+					foname = br.readLine();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
@@ -69,20 +61,16 @@ public class KisoKadai3 {
 				String nfiname = null;
 				//ファイルを入れるフォルダを指定させる
 				System.out.println("ファイルを作成したい場所を教えて下さい");
-				InputStreamReader isr2 = new InputStreamReader(System.in);
-				BufferedReader br2 = new BufferedReader(isr2);
 				try {
-					nfile = br2.readLine();
+					nfile = br.readLine();
 					//ファイル名を入力させる
 					System.out.println("ファイル名を入力してください");
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
 				}
-				isr2 = new InputStreamReader(System.in);
-				br2 = new BufferedReader(isr2);
 				try {
-					nfiname = br2.readLine();
+					nfiname = br.readLine();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
@@ -104,20 +92,16 @@ public class KisoKadai3 {
 				String finamer = null;
 				// 読みたいファイルが入っているフォルダを指定させる
 				System.out.println("読みたいファイルの場所を教えて下さい");
-				InputStreamReader isr3 = new InputStreamReader(System.in);
-				BufferedReader br3 = new BufferedReader(isr3);
 				try {
-					filer = br3.readLine();
+					filer = br.readLine();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
 				}
 				//読みたいファイルを指定させる
-				System.out.println("ファイル名を拡張子も含めて入力してください");
-				isr3 = new InputStreamReader(System.in);
-				br3 = new BufferedReader(isr3);
+				System.out.println("ファイル名を拡張子も含めて入力してください\n\n");
 				try {
-					finamer = br3.readLine();
+					finamer = br.readLine();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
@@ -140,33 +124,27 @@ public class KisoKadai3 {
 				String finamew = null;
 				//書き込みたいファイルの場所を入力させる
 				System.out.println("書き込みたいファイルの場所を教えて下さい");
-				InputStreamReader isr4 = new InputStreamReader(System.in);
-				BufferedReader br4 = new BufferedReader(isr4);
 				try {
-					filew = br4.readLine();
+					filew = br.readLine();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
 				}
 				//書き込みたいファイル名を入力させる
-				System.out.println("ファイル名を入力してください");
-				isr4 = new InputStreamReader(System.in);
-				br4 = new BufferedReader(isr4);
+				System.out.println("ファイル名を拡張子も含めて入力してください");
 				try {
-					finamew = br4.readLine();
+					finamew = br.readLine();
 				} catch (IOException e) {
 					//例外時処理
 					e.printStackTrace();
 				}
 				// 上書きか追記を選択する
 				System.out.print("ファイルに上書きしたいなら「1」・追記したいなら「2」を入力してください: ");
-				InputStreamReader isrb = new InputStreamReader(System.in);
-				BufferedReader brb = new BufferedReader(isrb);
 				// 上書きと追記の分岐
 				boolean bool = true;
 				int w = 0;
 				try {
-					String bufb = brb.readLine();
+					String bufb = br.readLine();
 					w = Integer.parseInt(bufb);
 					if (w == 1)
 						bool = false;
@@ -181,22 +159,20 @@ public class KisoKadai3 {
 					FileWriter fw = new FileWriter(filew + "\\" + finamew, bool);
 					PrintWriter pw = new PrintWriter(new BufferedWriter(fw));
 					// 内容を指定する
-					System.out.print("内容を入力してください: ");
-					InputStreamReader isr = new InputStreamReader(System.in);
-					BufferedReader br = new BufferedReader(isr);
+					System.out.print("内容を入力してください: \n");
 					String str = br.readLine();
 					pw.println(str);
 					// ファイルに書き出す
 					pw.close();
 					// 終了メッセージを画面に出力する
-					System.out.println("出力が完了しました。");
+					System.out.println("出力が完了しました。\n");
 				} catch (IOException e) {
 					// 例外時処理
 					e.printStackTrace();
 				}
 			} else {
 				// プログラムの終了
-				System.out.println("終了");
+				System.out.println("\n\n終了\n\n");
 			}
 		}
 	}
